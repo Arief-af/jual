@@ -5,9 +5,9 @@
     <form method="POST" action="/categories">
         @csrf
         <div class="mb-3">
-            <label>Name</label>
-            <input class="form-control" value="{{ old('name') }}" name="name" />
-            @error('name')
+            <label>Jenis barang</label>
+            <input class="form-control" value="{{ old('jenis_barang') }}" name="jenis_barang" />
+            @error('jenis_barang')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

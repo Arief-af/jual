@@ -14,14 +14,14 @@ Categories
     <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>jenis barang</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->name }}</td>
+                    <td>{{ $category->jenis_barang }}</td>
                     <td>
                         <a href="/categories/{{ $category->id }}/edit" class="btn btn-link text-info">Edit</a>
                         <form class="d-inline-block" action="/categories/{{ $category->id }}" method="POST">
