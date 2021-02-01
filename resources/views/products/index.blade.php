@@ -35,13 +35,13 @@ Product
                     <td>{{ $product->category->jenis_barang }}</td>
                     <td>
                         <a href="/products/{{ $product->id }}/edit" class="btn btn-link text-info">Edit</a>
-                        @if ($product->deletable)
+                       
                             <form class="d-inline-block" action="/products/{{ $product->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-link text-danger">Delete</button>
                             </form>
-                        @endif
+                        
                     </td>
                     
                 </tr>

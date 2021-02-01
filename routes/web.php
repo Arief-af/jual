@@ -17,9 +17,6 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
