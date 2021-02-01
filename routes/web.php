@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('purchases', PurchaseController::class);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 Route::middleware('guest')->group(function () {
