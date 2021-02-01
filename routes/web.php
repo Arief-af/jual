@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::middleware('auth')->group(function () {
+    Route::resource('categories', CategoryController::class);
+});
 
-Route::resource('categories', CategoryController::class);
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/', [AuthController::class, 'showFormLogin'])->name('login');
+});
