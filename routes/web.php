@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -20,6 +22,8 @@ Route::get('/', function () {
 });
 Route::middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('purchases', PurchaseController::class);
 });
 
 Route::middleware('guest')->group(function () {
