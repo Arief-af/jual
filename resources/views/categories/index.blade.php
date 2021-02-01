@@ -21,7 +21,7 @@ Categories
         <tbody>
             @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->name }}</td>
+                    <td>{{ $category->jenis_barang }}</td>
                     <td>
                         <a href="/categories/{{ $category->id }}/edit" class="btn btn-link text-info">Edit</a>
                         <form class="d-inline-block" action="/categories/{{ $category->id }}" method="POST">
